@@ -6,8 +6,6 @@ import logging
 class CountriesSpider(scrapy.Spider):
     name = 'countries'
     allowed_domains = ['www.worldometers.info']
-    start_urls = [
-        'https://www.worldometers.info/world-population/population-by-country']
 
     def start_requests(self):
         yield scrapy.Request(url='https://www.worldometers.info/world-population/population-by-country', callback=self.parse, headers={
